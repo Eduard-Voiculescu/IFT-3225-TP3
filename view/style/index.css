@@ -1,0 +1,62 @@
+body {
+    background-image: url("../img/background_CEPSUM.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login {
+    background: rgb(73, 73, 73, 0.5);
+}
+
+.form-field {
+
+}
+
+#login-info {
+
+}
+
+.form_buttons {
+
+}
+
+#register{
+    background: rgb(73, 73, 73, 0.5);
+}
+
+.center-h1 {
+    text-align: center;
+}
+
+form {
+    padding: 20px;
+}
+
+button {
+    background-color: #4286f4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}  
+
+button:hover {
+    opacity: 0.8;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
