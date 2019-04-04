@@ -11,6 +11,7 @@
         <!-- Begin scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="../controllor/js/register_validation.js"></script>
+        <script src="../controllor/js/login_verification.js"></script>
         <!-- End scripts -->
     </head>
     <body>
@@ -22,15 +23,15 @@
 
                         <!-- Name -->
                         <label for="name"><b>Name</b> <span id="nameMessage"></span></label>
-                        <input id="name" name="name" type="text" minlength="2" placeholder="Enter Your Name"/>
+                        <input id="name" name="name" type="text" placeholder="Enter Your Name"/>
 
                         <!-- Last Name -->
                         <label for="last_name"><b>Last Name</b> <span id="lastNameMessage"></span> </label>
-                        <input id="last_name" name="last_name" type="text" minlength="2" placeholder="Enter Your Last Name"/>
+                        <input id="last_name" name="last_name" type="text" placeholder="Enter Your Last Name"/>
 
                         <!-- Login Account -->
                         <label for="login_account"><b>Login Account</b> <span id="loginAccountMessage"></span> </label>
-                        <input id="login_account" name="login_account" type="text" minlength="2" placeholder="Enter Your Login Account"/>
+                        <input id="login_account" name="login_account" type="text" placeholder="Enter Your Login Account"/>
 
                         <!-- Password -->
                         <label for="password"><b>Password</b> <span id="passwordMessage"></span> </label>
@@ -42,7 +43,7 @@
 
                     </div>
                     <div class="form_buttons">
-                        <button type="submit">Register</button>
+                        <button id="submit_info" type="submit">Register</button>
                     </div>
                 </form>
             </div>
