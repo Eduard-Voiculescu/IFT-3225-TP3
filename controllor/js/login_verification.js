@@ -14,6 +14,7 @@ function validateLogin () {
             login : login
         },
         success: function (result) {
+            console.log(login);
             if (result == 0) {
 
             } else if (result == 1){
