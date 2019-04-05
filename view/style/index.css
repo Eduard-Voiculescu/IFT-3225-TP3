@@ -61,3 +61,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+
+.cancel_button {
+    background-color: #bc2020;
+}
