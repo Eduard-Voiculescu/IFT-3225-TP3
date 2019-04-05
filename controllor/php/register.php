@@ -34,6 +34,6 @@
     // users table -> (name, last_name, login, password, is_admin)
     $sql_insert_request = "INSERT into $db_table_users (name, last_name, login, password, is_admin) VALUES ('$name', '$last_name', '$login_account', '$password', 'True')";
     mysqli_query($conn, $sql_insert_request);
-    mysli_close($conn);
+    // mysli_close($conn);
 
 ?>
