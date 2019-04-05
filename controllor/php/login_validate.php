@@ -20,6 +20,6 @@
         echo json_encode(1);
     }
 
-    mysqli_close($conn);
+    // mysqli_close($conn);
 
 ?>
