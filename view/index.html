@@ -9,7 +9,7 @@
         <!-- End css stylesheets-->
 
         <!-- Begin scripts -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- End scripts -->
     </head>
     <body>
@@ -18,19 +18,15 @@
                 <form id="login-form" name="login-form" method="POST" action="../controllor/php/login.php">
                     <h1 class="center-h1">Sign In to Your Account</h1>
                     <div class="form-field">
-                        <label for="login-username"><b>Login</b></label>
+                        <label for="login-info"><b>Login</b></label>
                         <input id="login-info" name="login-username" type="text" placeholder="Enter Login"/>
-                        <label for="login-password"><b>Password</b></label>
+                        <label for="password-info"><b>Password</b></label>
                         <input id="password-info" name="login-password" type="password" placeholder="Enter Password"/>
                     </div>
                     <div class="form_buttons">
                         <button type="submit">Sign In</button>
                     </div>
                 </form>
-
-                <!-- <a href="register.html">
-                    <button>New User</button>
-                </a> -->
 
                 <form id="register-form" name="register-form" method="get" action="register.html">
                     <div class="new-user-button">
