@@ -10,25 +10,32 @@
 
         <!-- Begin scripts -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../controllor/js/login_validation.js"></script>
         <!-- End scripts -->
     </head>
     <body>
         <div id="container">
             <div id="login">
-                <form id="login-form" name="login-form" method="POST" action="../controllor/php/login.php">
+                <form id="login-form" onsubmit="return validate_login_information() && validate_password_information()"
+                      method="POST" action="../controllor/php/login.php">
                     <h1 class="center-h1">Sign In to Your Account</h1>
                     <div class="form-field">
-                        <label for="login-info"><b>Login</b></label>
-                        <input id="login-info" name="login-username" type="text" placeholder="Enter Login"/>
-                        <label for="password-info"><b>Password</b></label>
-                        <input id="password-info" name="login-password" type="password" placeholder="Enter Password"/>
+
+                        <!-- login -->
+                        <label for="login-info"><b>Login </b> <span id="login_info_message"></span></label>
+                        <input id="login-info" name="login-info" type="text" placeholder="Enter Login"/>
+
+                        <!-- password -->
+                        <label for="password-info"><b>Password </b><span id="password_info_message"></span></label>
+                        <input id="password-info" name="password-info" type="password" placeholder="Enter Password"/>
+
                     </div>
                     <div class="form_buttons">
                         <button type="submit">Sign In</button>
                     </div>
                 </form>
 
-                <form id="register-form" name="register-form" method="get" action="register.html">
+                <form id="register-form" method="get" action="register.html">
                     <div class="new-user-button">
                         <button type="submit">New user</button>
                     </div>
