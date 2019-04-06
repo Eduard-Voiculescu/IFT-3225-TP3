@@ -12,6 +12,7 @@ body {
 
 #login {
     background: rgb(73, 73, 73, 0.5);
+    width: 40%;
 }
 
 .form-field {
