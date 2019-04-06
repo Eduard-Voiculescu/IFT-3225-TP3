@@ -59,10 +59,14 @@ function validateLogin () {
             success: function (response) {
 
                 if (response == 0) { // login account is not in the database
+
                     login_account_span.innerHTML = "";
+
                 } else if (response == 1){ // login account is in the database
+
                     login_account_span.innerHTML = "Login Account Already Exists";
-                    login_account_span.style.color = "#ff0000";
+                    login_account_span.style.color = red_color;
+
                 }
             }
         });
