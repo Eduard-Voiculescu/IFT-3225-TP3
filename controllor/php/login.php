@@ -17,16 +17,25 @@
         $password = NULL;
     }
 
-    // now lets check if username and password are correct in the database
-    echo "login is $login";
-    echo "<br />";
-    echo "password is $password";
+    $sql_request = "SELECT * FROM $db_table_users WHERE login='$login'";
 
+    $result = mysqli_query($conn, $sql_request);
+    $result = mysqli_fetch_array($result);
 
+    if ($result['password'] == $password) { // password is the same as the one in the database
+        session_start();
+        $_SESSION['login'] = $login; // pass login information to the next page
+        $_SESSION['password'] = $password; // pass password information to the next page
 
+        if ($login == "admin") { // the admin
+            header( 'Location: admin.php');
+        } else { // any other user
+            header( 'Location: user.php');
+        }
 
+    } else { // now lets check if username and password are correct in the database
+        // montrer un message quon peut pas se connecter
+        header('Location: ../../view/index.html');
+    }
 
-
-
-//    header( 'Location: ../../view/login.html' ) ;
 ?>
