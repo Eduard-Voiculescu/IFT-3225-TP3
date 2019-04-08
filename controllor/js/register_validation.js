@@ -34,7 +34,7 @@ function validateLogin () {
     let message = {
         login_account : {
             login_account_message : "Please enter a login account.",
-            minLength : "Your login account must be atleast 4 characters long."
+            minLength : "Your login account must be at least 4 characters long."
         }
     };
 
@@ -158,7 +158,7 @@ function validRetypePassword() {
 
     let message = {
         retype_password : {
-            retype_password_message : "Please enter a password",
+            retype_password_message : "Please enter a password.",
             error_message : "Does not match above password.",
             minLength : "Your password must be at least 4 characters long."
         }
