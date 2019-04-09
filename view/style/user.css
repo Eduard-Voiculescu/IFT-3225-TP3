@@ -1,0 +1,17 @@
+body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.background_image:after {
+    background-image: url("../img/CEPSUM.JPG");
+    background-size: cover;
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity : 0.3;
+    z-index: -1;
+}
