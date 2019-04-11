@@ -9,6 +9,10 @@
     // get password
     $password = $_SESSION['password'];
 
+    // to send to other pages
+    $_SESSION['login'] = $login; // pass login information to the next page
+    $_SESSION['password'] = $password; // pass password information to the next page
+
 ?>
 
 <html>
@@ -21,6 +25,10 @@
         <!-- Being JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="../../view/style/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../js/generate_user_html_template.js"></script>
+        <script src="../js/myReservations.js"></script>
+        <script src="../js/divContentInformation.js"></script>
+        <script src="../js/generate_book_a_reservation_html.js"></script>
         <!-- End JavaScript -->
 
         <title>
@@ -28,36 +36,7 @@
         </title>
     </head>
     <body>
-        <div class="background_image"></div>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Reservations</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Reservation
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Book</a>
-                            <a class="dropdown-item" href="#">Cancel</a>
-                        </div>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0" action="logout.php">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit">Log Out</button>
-                </form>
-            </div>
-        </nav>
+        <script>generate_user_html_template();</script>
+        <div class="container" id="main_div"></div>
     </body>
 </html>
-
-<?php
-//    session_destroy(); // don't forget to destroy the session once everything is generated
-?>
