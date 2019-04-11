@@ -5,5 +5,5 @@ $db_user = "root";
 $db_host = "localhost";
 $db_name = "cepsum";
 $db_table_users = "users";
-$db_table_reservations = "";
+$db_table_reservations = "reservations";
 ?>
