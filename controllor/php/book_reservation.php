@@ -13,7 +13,7 @@
     $_SESSION['login'] = $login; // pass login information to the next page
     $_SESSION['password'] = $password; // pass password information to the next page
 
-    //
+    // reservations table [login_number (varchar 100), field_number (varchar 1), reservation_date (date), reservation_hour (varchar 10)]
 
 ?>
 
