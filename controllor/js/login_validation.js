@@ -19,7 +19,6 @@ $(document).ready(function () {
 });
 
 function validate_login_information() {
-
     // login
     let login = document.getElementById('login-info');
     let login_span = document.getElementById('login_info_message');

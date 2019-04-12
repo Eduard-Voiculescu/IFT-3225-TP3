@@ -33,9 +33,10 @@
 
     // users table -> (name, last_name, login, password, is_admin)
     // to add an admin uncomment first line
-//    $sql_insert_request = "INSERT into $db_table_users (name, last_name, login, password, is_admin) VALUES ('$name', '$last_name', '$login_account', '$password', TRUE)";
+    //    $sql_insert_request = "INSERT into $db_table_users (name, last_name, login, password, is_admin) VALUES ('$name', '$last_name', '$login_account', '$password', TRUE)";
     $sql_insert_request = "INSERT into $db_table_users (name, last_name, login, password, is_admin) VALUES ('$name', '$last_name', '$login_account', '$password', FALSE)";
     mysqli_query($conn, $sql_insert_request);
+
     // mysli_close($conn);
 
     header("Location: ../../view/index.html");
