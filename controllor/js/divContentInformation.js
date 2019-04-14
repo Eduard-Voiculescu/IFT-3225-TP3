@@ -16,4 +16,8 @@ $(document).ready(function () {
 
     });
 
+    $('#availability').click(function (){
+        availabilityHTML();
+    });
+
 });
