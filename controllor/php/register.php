@@ -39,6 +39,11 @@
 
     // mysli_close($conn);
 
-    header("Location: ../../view/index.html");
+    echo "<script type=\"text/JavaScript\">
+                alert(\"You have successfully created your account.\");
+                window.location.replace('../../view/index.html');
+             </script>";
+
+//    header("Location: ../../view/index.html");
 
 ?>
