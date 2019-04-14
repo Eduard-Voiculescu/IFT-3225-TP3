@@ -128,8 +128,10 @@ function createSelectReservationNumber() {
     let tomorrow = getTodayDate(1);
 
     let optionToday = document.createElement('option');
+    optionToday.setAttribute('value', today.toString());
     optionToday.textContent = today.toString();
     let optionTomorrow = document.createElement('option');
+    optionTomorrow.setAttribute('value', tomorrow.toString());
     optionTomorrow.textContent = tomorrow.toString();
 
     select.appendChild(optionToday);
