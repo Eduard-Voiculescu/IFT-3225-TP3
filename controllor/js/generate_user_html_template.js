@@ -114,7 +114,6 @@ function createListItemReservation () {
     a_book.setAttribute('class', 'dropdown-item');
     a_book.setAttribute('href', '#');
     a_book.setAttribute('id', 'bookReservation');
-    a_book.setAttribute('onclick', 'bookAReservationHTML();');
     a_book.textContent = "Book";
     let a_cancel = document.createElement('a');
     a_cancel.setAttribute('class', 'dropdown-item');
