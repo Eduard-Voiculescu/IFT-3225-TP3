@@ -26,7 +26,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="../../view/style/bootstrap/js/bootstrap.min.js"></script>
         <script src="../js/generate_user_html_template.js"></script>
-        <script src="../js/myReservations.js"></script>
+        <script src="../js/generate_my_reservations_html.js"></script>
         <script src="../js/divContentInformation.js"></script>
         <script src="../js/generate_book_a_reservation_html.js"></script>
         <!-- End JavaScript -->
