@@ -1,18 +1,18 @@
 $(document).ready(function () {
 
-    $('#home').change(function () {
+    $('#home').click(function () {
 
     });
 
-    $('#myReservations').change(function () {
-
+    $('#myReservations').click(function () {
+        myReservationsHTML();
     });
 
-    $('#bookReservation').onclick(function () {
+    $('#bookReservation').click(function () {
         bookAReservationHTML();
     });
 
-    $('#cancelReservation').change(function () {
+    $('#cancelReservation').click(function () {
 
     });
 
