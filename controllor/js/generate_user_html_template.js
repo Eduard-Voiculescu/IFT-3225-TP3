@@ -22,6 +22,9 @@ function generate_user_html_template() {
     // li reservation
     let li_reservation = createListItemReservation();
 
+    // li availability
+    let li_availability = createAvailabilityElement();
+
     // form to log out
     let form_log_out = createFormToLogOut();
 
@@ -31,6 +34,7 @@ function generate_user_html_template() {
     ul.appendChild(li_home);
     ul.appendChild(li_my_reservations);
     ul.appendChild(li_reservation);
+    ul.appendChild(li_availability);
     nav.appendChild(div_nav);
     nav.appendChild(form_log_out);
     document.body.appendChild(nav);
@@ -124,6 +128,20 @@ function createListItemReservation () {
     div_reservation.appendChild(a_cancel);
     li_reservation.appendChild(div_reservation);
     return li_reservation;
+}
+
+function createAvailabilityElement() {
+    /** Creates the list availability item */
+    let li_availability = document.createElement('li');
+    li_availability.setAttribute('class', 'nav-item');
+    let a_availability = document.createElement('a');
+    a_availability.setAttribute('class','nav-link');
+    a_availability.setAttribute('href','#');
+    a_availability.setAttribute('id','availability');
+    a_availability.textContent = "Availability";
+    li_availability.appendChild(a_availability);
+    return li_availability;
+
 }
 
 function createFormToLogOut () {
