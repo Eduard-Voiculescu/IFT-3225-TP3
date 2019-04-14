@@ -45,4 +45,12 @@
     echo $reservation_date;
     echo $reservation_hour;
 
+    $sql_delete_reservation = "DELETE FROM $db_table_reservations WHERE login_account='$login_account' AND field_number='$field_number' AND reservation_date='$reservation_date' AND reservation_hour='$reservation_hour'";
+    mysqli_query($conn, $sql_delete_reservation);
+
+    echo "<script type=\"text/JavaScript\">
+                alert(\"You have successfully deleted your reservation.\");
+                window.location.replace('user.php');
+             </script>";
+
 ?>
