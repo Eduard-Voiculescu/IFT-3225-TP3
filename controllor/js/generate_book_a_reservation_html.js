@@ -23,7 +23,7 @@ function bookAReservationHTML () {
     let field_number_select = createSelectFieldNumber();
 
     // create reservation date label
-    let reservation_date_label = createLabel("reservationDateSelect", "Reservation date (DD/MM/YYYY)");
+    let reservation_date_label = createLabel("reservationDateSelect", "Reservation date (YYYY-MM-DD)");
 
     // create select reservation date
     let reservation_date_select = createSelectReservationNumber();
@@ -93,7 +93,7 @@ function labelFieldNumber() {
 function createSelectFieldNumber() {
     let select = document.createElement('select');
     select.setAttribute('class', 'form-control');
-    select.setAttribute('id', 'fieldNumberSelect');
+    select.setAttribute('name', 'fieldNumberSelect');
 
     let option1 = createOption("option1", "1", "1");
     let option2 = createOption("option2", "2", "2");
@@ -122,34 +122,26 @@ function createOption (id, value, html_value) {
 function createSelectReservationNumber() {
     let select = document.createElement('select');
     select.setAttribute('class', 'form-control');
-    select.setAttribute('id', 'reservationDateSelect');
+    select.setAttribute('name', 'reservationDateSelect');
 
-    let option = document.createElement('option');
+    let today = getTodayDate(0);
+    let tomorrow = getTodayDate(1);
 
-    // today date -> https://hype.codes/how-get-current-date-javascript
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth() + 1;
-    let yyyy = today.getFullYear();
+    let optionToday = document.createElement('option');
+    optionToday.textContent = today.toString();
+    let optionTomorrow = document.createElement('option');
+    optionTomorrow.textContent = tomorrow.toString();
 
-    if (dd < 10) {
-        dd = '0' + dd
-    }
+    select.appendChild(optionToday);
+    select.appendChild(optionTomorrow);
 
-    if (mm < 10) {
-        mm = '0' + mm
-    }
-    today = mm + '/' + dd + '/' + yyyy;
-    option.textContent = today.toString();
-
-    select.appendChild(option);
     return select;
 }
 
 function createSelectReservationHour() {
     let select = document.createElement('select');
     select.setAttribute('class', 'form-control');
-    select.setAttribute('id', 'reservationHourSelect');
+    select.setAttribute('name', 'reservationHourSelect');
 
     // options
     let option1 = createOption("option6h", "6:00", "6:00");
