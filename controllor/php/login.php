@@ -35,7 +35,10 @@
 
     } else { // now lets check if username and password are correct in the database
         // montrer un message quon peut pas se connecter
-        header('Location: ../../view/index.html');
+        echo "<script type=\"text/JavaScript\">
+                alert(\"You have entered the wrong password. Please try again.\");
+                window.location.replace('../../view/index.html');
+             </script>";
     }
 
 ?>
