@@ -49,6 +49,7 @@
         <script src="../js/divContentInformation.js"></script>
         <script src="../js/generate_book_a_reservation_html.js"></script>
         <script src="../js/generate_cancel_reservation_html.js"></script>
+        <script src="../js/generate_availability.js"></script>
         <!-- End JavaScript -->
 
         <title>
