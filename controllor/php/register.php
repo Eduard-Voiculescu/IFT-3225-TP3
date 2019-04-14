@@ -44,6 +44,4 @@
                 window.location.replace('../../view/index.html');
              </script>";
 
-//    header("Location: ../../view/index.html");
-
 ?>
