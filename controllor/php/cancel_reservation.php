@@ -45,6 +45,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="../../view/style/bootstrap/js/bootstrap.min.js"></script>
         <script src="../js/generate_user_html_template.js"></script>
+        <script src="../js/generate_admin_html_template.js"></script>
         <script src="../js/generate_my_reservations_html.js"></script>
         <script src="../js/divContentInformation.js"></script>
         <script src="../js/generate_book_a_reservation_html.js"></script>
@@ -57,7 +58,14 @@
         </title>
     </head>
     <body>
-        <script>generate_user_html_template();</script>
+        <script>
+            let login_check = "<?php echo $login_account; ?>";
+            if (login_check === "admin") {
+                generate_admin_html_template();
+            } else {
+                generate_user_html_template();
+            }
+        </script>
         <div class="container" id="main_div">
             <script type="text/javascript">
                 let login = "<?php echo $login_account; ?>";
