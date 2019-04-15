@@ -9,8 +9,12 @@
     // get login account information
     $login = $_SESSION['login'];
 
+    // get is admin
+    $admin = $_SESSION['is_admin'];
+
     // to send to other pages
     $_SESSION['login'] = $login; // pass login information to the next page
+    $_SESSION['is_admin'] = $admin;
 
     $sql_show_all_players = "SELECT * from $db_table_users";
 
@@ -49,6 +53,7 @@
     <script src="../js/generate_my_reservations_html.js"></script>
     <script src="../js/divContentInformation.js"></script>
     <script src="../js/generate_book_a_reservation_html.js"></script>
+    <script src="../js/generate_cancel_reservation_html.js"></script>
     <script src="../js/generate_availability.js"></script>
     <!-- End JavaScript -->
 
