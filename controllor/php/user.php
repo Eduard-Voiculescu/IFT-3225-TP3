@@ -6,12 +6,12 @@
     // get login account information
     $login = $_SESSION['login'];
 
-    // get password
-    $password = $_SESSION['password'];
+    // get is admin
+    $admin = $_SESSION['is_admin'];
 
     // to send to other pages
     $_SESSION['login'] = $login; // pass login information to the next page
-    $_SESSION['password'] = $password; // pass password information to the next page
+    $_SESSION['is_admin'] = $admin;
 
 ?>
 
@@ -39,8 +39,8 @@
     </head>
     <body>
         <script>
-            let login_check = "<?php echo $login; ?>";
-            if (login_check === "admin") {
+            let login_check = "<?php echo $admin; ?>";
+            if (login_check === "1") {
                 generate_admin_html_template();
             } else {
                 generate_user_html_template();

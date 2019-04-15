@@ -9,8 +9,12 @@
     // get login account information
     $login = $_SESSION['login'];
 
+    // get is admin
+    $admin = $_SESSION['is_admin'];
+
     // to send to other pages
     $_SESSION['login'] = $login; // pass login information to the next page
+    $_SESSION['is_admin'] = $admin;
 
     // get date
     if (isset($_POST['availabilityDateSelect'])) {
@@ -39,7 +43,7 @@
     $field_5 = "5";
 
     if (mysqli_num_rows($result_show_availabilities) != 0) { // there is at least 1 reservation for the date and hour chosen
-        while ($row = $result_array = mysqli_fetch_array($result_show_availabilities)) {
+        while ($result_array = mysqli_fetch_array($result_show_availabilities)) {
             $field_number = (int) $result_array['field_number'];
             unset($tab_available[$field_number - 1]);
             if ($field_number == 1)
@@ -82,8 +86,8 @@
     </head>
     <body>
     <script>
-        let login_check = "<?php echo $login; ?>";
-        if (login_check === "admin") {
+        let login_check = "<?php echo $admin; ?>";
+        if (login_check === "1") {
             generate_admin_html_template();
         } else {
             generate_user_html_template();

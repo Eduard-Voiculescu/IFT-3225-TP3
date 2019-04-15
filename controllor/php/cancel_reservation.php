@@ -9,8 +9,12 @@
     // get login account information
     $login = $_SESSION['login'];
 
+    // get is admin
+    $admin = $_SESSION['is_admin'];
+
     // to send to other pages
     $_SESSION['login'] = $login; // pass login information to the next page
+    $_SESSION['is_admin'] = $admin;
 
     // show a list of all the reservations
     $date = date("Y-m-d");
@@ -59,8 +63,8 @@
     </head>
     <body>
         <script>
-            let login_check = "<?php echo $login_account; ?>";
-            if (login_check === "admin") {
+            let login_check = "<?php echo $admin; ?>";
+            if (login_check === "1") {
                 generate_admin_html_template();
             } else {
                 generate_user_html_template();
