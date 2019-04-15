@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style/2048.css"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <link rel="stylesheet" href="view/style/bootstrap/css/bootstrap.min.css" />
+<!--        <link rel="stylesheet" type="text/css" href="view/style/index.css"/>-->
+        <style type="text/css">
+            p {
+                text-align: justify;
+            }
+        </style>
+        <title>Rapport</title>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <p style="text-align: center;">Dans ce document, l’emploi du masculin pour désigner des personnes n’a d’autres fins que celle d’alléger le texte.</p>
+
+            <h1 style="text-align: center;">Rapport</h1>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h5>Travail fait par</h5>
+                    <h6>DAHER Bilal</h6>
+                    <h6>VOICULESCU Eduard</h6>
+                    <br />
+
+
+                    <!-- Introduction BEGIN -->
+                    <h2>Introduction</h2>
+                    <p>
+                        Par la présente, nous avons compilé un petit rapport expliquand les petits détails
+                        d'implémentations et plusieurs autres éléments que nous voulons éclaircir toute ambiguïté.
+                    </p>
+                    <!-- Introduction END -->
+
+
+                    <!-- Schéma de nos base de données BEGIN -->
+                    <h2>Schéma de nos base de données</h2>
+                    <p>
+                        Notre base de donnée est intitulée cepsum. Dans cette dernière, il y a 2 tables : users et
+                        reservations.
+                    </p>
+                    <h5>Table users</h5>
+                    <p>
+                        Le table users est composé de 5 colonnes :<br />
+                        name de type VARCHAR(100) <br />
+                        last_name de type VARCHAR(100) <br />
+                        login de type VARCHAR(100) <br />
+                        password de type VARCHAR(100) <br />
+                        is_admin de type TINYINT(1) (c'est 0 ou 1 pour savoir si un user est admin ou non) <br />
+                        La clef primaire est le login, puisqu'on ne peut pas voir deux fois le même login.
+                        Bien evidemment, un utilisateur pourrait se créer plusieurs comptes avec des logins différents
+                        mais nous n'avons pas fait de check sur cela, puisqu'il n'était pas mentionné.
+                        Le choix de taille pour les varchar est simplement pour lasser la liberté au utilisateur
+                        de remplir les champs avec des données assez grandes.
+                    </p>
+                    <h5>Table reservations</h5>
+                    <p>
+                        Le table reservations est composé de 4 colonnes :<br />
+                        login_account de type VARCHAR(100) <br />
+                        field_number de type VARCHAR(1) <br />
+                        reservation_date de type DATE <br />
+                        reservation_hour de type TIME <br />
+                        Ici il n'y a pas de clef primaire ici et ni de foreign clef.
+                        Un point faible que nous avons remarqué qui pourrait s'introduire est la lourdeur de la table.
+                        Puisque nous ne supprimons pas les données de réservations après une journée, si on considère que les
+                        terrains sont réservés à tous les jours, après 1 ans, on aurait 6*15*365 = 27375 données dans notre table.
+                        Après plusieurs années, lancer les requêtes sql pourrait devenir assez long. Mais nous n'avons pas
+                        eu de demande d'enlever les données après une journée, donc nous ne l'avons pas fait. Par contre,
+                        dans un réel projet avec des réels clients, il faudrait faire un back up ou quelque chose pour migrer
+                        les données passées.
+                    </p>
+                    <!-- Schéma de nos base de données END -->
+
+
+                    <!-- Choix de modélisation BEGIN -->
+                    <h2>Choix de modélisation</h2>
+
+                    <p>
+                        Pour ce travail, nous avons choisi de faire le projet au complet en MVC
+                        (Model View Controller). La raison est assez simple, c'est un patron de
+                        conception que nous avons appris dans notre cours de génie logiciel qui
+                        semblait bien s'appliquer à ce projet. Comme de fait, c'était très pratique
+                        et cela nous a également permit d'avoir une structure de nos fichiers
+                        compréhensible et structuré pour leur utilité.
+                    </p>
+                    <h5>Dossier controller</h5>
+                    <p>
+                        Dans le dossier controller, c'est ici que presque tout est fait.
+                        Il y a  2 sous-dossiers intitulés js et php. Le dossier js contient tout les
+                        fichiers Javascript qui ont étés utilisé pour générer le code html, faire de la vérification
+                        et faire du ajax sur certaine données. Dans le dossier php, tous les fichiers php s'y trouvent.
+                        Ces derniers ont plusieurs utilités. Pour mieux vous aider à vous repérer, nous avons nommés
+                        les fichiers *.php avec des noms très descriptiifs (book_reservation.php pour réaliser une réservation,
+                        connect_database.php pour se connecter à la database et ainsi de suite).
+                    </p>
+                    <h5>Dossier view</h5>
+                    <p>
+                        Lorsque vous allez ouvrir le *.zip, vous aller constaté plusieurs dossier.
+                        Le dossier view contient les différents fichiers qui servent à montrer
+                        ce que le client. Dans le dossier view, il y plusieurs ficher *.html et il y a
+                        2 sous-dossiers intitulés img et style. Le dossier img contient des images
+                        qui ont étées prises en ligne et que ces dernières ne servent qu'à des fins esthétiques. Ce dossier
+                        contient également des images que nous avons utilisé dans notre rapport.
+                        Par la suite, dans le fichier style, ce dernier contient des fichers *.css qui nous ont servit
+                        de faire un design présentable. Nous avons également utilisé Bootstrap pour styler le TP.
+                    </p>
+                    <h5>Dossier model</h5>
+                    <p>
+                        Le dossier model contient les fichiers *.sq pour les informations reliées à nos tables dans
+                        notre base de données. Pour plus d'informations, allez voir la section "Schéma de nos base de données".
+                    </p>
+                    <!-- Choix de modélisation END -->
+
+                    <!-- Ce que nous avons appris BEGIN -->
+                    <h2>Ce que nous avons appris</h2>
+                    <p>
+                        Durant ce TP, nous avons appris un point très important. Nous avons appris à faire un site
+                        en Full Stack. Nous avons eu le contrôle du front-end et du back-end. De plus, nous avons aussi
+                        eu le contrôle de passer des informations entre le back-end (les fichers php -> database)
+                        vers le front-end (php -> js -> html). C'était un TP très amusant et d'une certaine envergure
+                        que nous avons entamé.
+                    </p>
+                    <p>
+                        Nous avons appris à utiliser phpmyadmin. Nous avons appris à créer nos bases de données dans
+                        phpmyadmin (pour le local). De plus, nous avons également appris comment aller chercher,
+                        insérer et supprimer des données dans des bases de données.
+                    </p>
+                    <h5>Ajax</h5>
+                    <p>
+                        Nous avons également appris à utiliser Ajax pour faire une valisation asynchrone sur certaines
+                        données. Exemple, si on met un login name qui n'existe pas, on va automatiquement avoir le
+                        message que le login n'existe pas dans la base de donnée.
+                    </p>
+                    <img src="view/img/ajax_login.PNG" alt="image sur ajax pour le login" />
+                    <p>
+                        Nous avons aussi utiliser du Ajax lorsqu'un utilisateur essaye de créer un compte mais que le
+                        login account existe déja dans la base de donnée.
+                    </p>
+                    <img src="view/img/ajax_register.PNG" alt="image sur ajax pour register" />
+                    <h5>Javascript</h5>
+                    <p>
+                        Concernant ce que nous avons appris sur Javascript, nous en avons appris beaucoup.
+                        Presque tout le html du projet est généré avec du Javascript. Cela nous permet d'avoir
+                        du code dans nos fichier *.html très minimaliste, puisque ces derniers sont générés
+                        par du Javascript. De plus, puisque nous utilisons toujours le même format pour le nav et
+                        le "back-bone" de la présentation des données, en faisant une fonction de Javascript, on
+                        a pu éviter de réecrire beaucoup de code inutile. Les fichiers Javascript qui servent
+                        à générer du html sont intitulé generate _*_html_template.js. Il y en a plusieurs présent.
+                        Aussi, les forms et les table sont presque tous généré par du Javascript. Encore, cela nous permet
+                        de réutiliser beaucoup de fonction pour générer des tableaux et des formulaires.
+                    </p>
+                    <p>
+                        Un autre point très important que nous avons appris avec Javascript est la validation des données.
+                        Lorsqu'un utilisateur essaye de s'inscrire dans notre club, il y a plusieurs validations qui
+                        sont faites sur les données que ce dernier doit rentrer. Prenez note: Ce n'était pas demandé
+                        d'avoir des restrictions sur certaines données, mais nous avons décider d'en ajouter, question que
+                        notre site soit plus "réaliste". Il y a aussi de la vérification si les mots de passes ne sont pas
+                        identiques, ou si on a pas assez de caractères pour certains champs. Amusez-vous !
+                    </p>
+                    <img src="view/img/register_check.PNG" alt="image sur les checks qui sont fais pour un utilisateur qui veut s'entregistrer dans notre club" />
+                    <h5>Php</h5>
+                    <p>
+                        Concernant le php, c'est ici que nous avons appris le plus. Avant de prendre le court IFT 3225,
+                        nous avons fait très peu de php. Avec ce tp, nos notions et connaissances de php sont de niveaux
+                        intermédiaires. Nous avons appris à se connecter à une base de donnée, à envoyer des commandes
+                        à une base de données (SELECT, INSERT et DELETE). Interpréter les réponses et faire ce qu'il faut avec.
+                        On a aussi jouer beaucoup avec des array. De plus, à de maintes reprises, on devait envoyer des
+                        données de php vers Javascript. Plusieurs heures on été perdu à essayer de comprendre comment envoyer.
+                        Ces à ce moment que nos notions de API nous ont sauvé. Lorsqu'on envoie des données du php à Javascript,
+                        il faut qu'on les envoies sous forme de json avec json_encode($var). Une fois cela fait,
+                        nous voilà être capable de facilement prendre les informations du php et jouer avec dans notre code
+                        Javascript. Que ce soit des strings, des ints, des arrays, avec json_encode($var) on peut les interpréter
+                        avec du Javascript par la suite. Cela a été très utile lorsque nous devons afficher les terrains
+                        réservés et les terrains disponibles. Il est plus facile d'encapsuler l'information dans un array en php
+                        et de les envoyer au Javascript pour ensuite générer les tableaux nécessaires. C'est très puissant la
+                        chimie entre php et Javascript.
+                    </p>
+                    <!-- Ce que nous avons appris END -->
+
+
+                </div>
+
+                <p>
+                    Ci-dessous, nous avons mis plusieurs captures d'écran pour vous donnez un idée de notre projet.
+                    Amusez-vous bien avec l'interface !
+                </p>
+
+                <h2>Vue utilisateur normal</h2>
+                <img src="view/img/user_view_1.PNG" alt="user view 1" />
+                <img src="view/img/user_view_2.PNG" alt="user view 2" />
+                <img src="view/img/user_view_3.PNG" alt="user view 3" />
+
+                <h2>Vue admin</h2>
+                <img src="view/img/admin_view_1.PNG" alt="admin view 1" />
+                <img src="view/img/admin_view_2.PNG" alt="admin view 2" />
+                <img src="view/img/admin_view_3.PNG" alt="admin view 3" />
+                <img src="view/img/admin_view_4.PNG" alt="admin view 4" />
+
+            </div>
+        </div>
+    </body>
+</html>
