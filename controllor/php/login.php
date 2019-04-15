@@ -25,7 +25,7 @@
     if ($result['password'] == $password) { // password is the same as the one in the database
         session_start();
         $_SESSION['login'] = $login; // pass login information to the next page
-        $_SESSION['password'] = $password; // pass password information to the next page
+        $_SESSION['is_admin'] = $result['is_admin'];
 
         if ($login == "admin") { // the admin
             header( 'Location: admin.php');
