@@ -487,7 +487,7 @@ function createTBodyElementListAvailableFields(array_availability, begin_hour, e
 
     let avail_begin = convertHourToInt(begin_hour);
     let avail_end = convertHourToInt(end_hour);
-    
+
     // array is always 15
     for (let i = 1; i <= 5; i++){
         for (let j = 0; j < 15; j++){
